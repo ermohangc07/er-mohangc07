@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 
 export default function SiteFooter() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="border-t bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 py-10 grid gap-8 md:grid-cols-4">
@@ -46,7 +50,7 @@ export default function SiteFooter() {
 
       {/* Bottom Bar */}
       <div className="border-t py-4 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} er.mohangc07. All rights reserved. · 
+        © {year} er.mohangc07. All rights reserved. · 
         <Link href="/privacy" className="ml-2">Privacy</Link> · 
         <Link href="/terms" className="ml-2">Terms</Link>
       </div>

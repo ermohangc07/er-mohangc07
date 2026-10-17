@@ -1,9 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function SiteFooter() {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="border-t bg-gray-50">
@@ -50,7 +55,7 @@ export default function SiteFooter() {
 
       {/* Bottom Bar */}
       <div className="border-t py-4 text-center text-sm text-gray-500">
-        © {year} er.mohangc07. All rights reserved. · 
+        © {year ?? ""} er.mohangc07. All rights reserved. · 
         <Link href="/privacy" className="ml-2">Privacy</Link> · 
         <Link href="/terms" className="ml-2">Terms</Link>
       </div>
